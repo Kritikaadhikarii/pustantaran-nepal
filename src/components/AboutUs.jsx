@@ -1,7 +1,11 @@
 import React from "react";
+import Hero from "./Hero";
 
 const AboutUs = () => {
   return (
+    <>
+    <Hero />
+    
     <section className="bg-gray-100 py-10 px-6">
       {/* About Us Section */}
       <div className="container mx-auto mb-12">
@@ -116,6 +120,7 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
