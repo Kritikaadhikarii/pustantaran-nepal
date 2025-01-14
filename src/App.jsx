@@ -9,6 +9,8 @@ import Resources from "./components/Resources";
 import SupportUs from "./components/SupportUs";
 import Team from "./components/Team";
 import WhyUs from "./components/WhyUs";
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -28,7 +30,10 @@ function App() {
           <Route path="/support-us" element={<SupportUs />} />
           <Route path="/team" element={<Team />} />
           <Route path="/why-us" element={<WhyUs />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
+
+        <Footer />
       </div>
     </Router>
   );
