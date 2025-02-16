@@ -23,12 +23,6 @@ const Footer = () => {
             About Us
           </Link>
           <Link
-            to="/background"
-            className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200"
-          >
-            Background
-          </Link>
-          <Link
             to="/funding"
             className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200"
           >
@@ -55,12 +49,12 @@ const Footer = () => {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-2">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
+            className="p-1 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
           >
             <FaFacebook />
           </a>
@@ -68,7 +62,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
+            className="p-1 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
           >
             <FaInstagram />
           </a>
@@ -76,7 +70,7 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
+            className="p-1 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
           >
             <FaTwitter />
           </a>
@@ -84,7 +78,7 @@ const Footer = () => {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
+            className="p-1 rounded-full hover:bg-teal-50 hover:text-teal-900 transition duration-200 text-2xl"
           >
             <FaLinkedin />
           </a>

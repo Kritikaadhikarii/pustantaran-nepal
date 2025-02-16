@@ -1,5 +1,6 @@
 import GalleryCarousel from "./GalleryCarousel";
 import ProductCarousel from "./ProductCarousel";
+import SocialCarousel from "./SocialCarousel";
 import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
@@ -42,6 +43,7 @@ const Hero = () => {
         {/* Carousel Section */}
         <GalleryCarousel images={images} />
         <ProductCarousel images={images}/>
+        <SocialCarousel />
       </section>
     </div>
   );

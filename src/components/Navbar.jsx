@@ -19,12 +19,6 @@ const Navbar = () => {
             About Us
           </Link>
           <Link
-            to="/background"
-            className="hover:text-teal-900 hover:bg-teal-50 p-4 rounded-full transition duration-200"
-          >
-            Background
-          </Link>
-          <Link
             to="/funding"
             className="hover:text-teal-900 hover:bg-teal-50 p-4 rounded-full transition duration-200"
           >
