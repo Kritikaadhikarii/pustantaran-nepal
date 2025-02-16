@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import product1 from "../assets/product1.jpg";
+import product2 from "../assets/product2.jpg";
+import product3 from "../assets/product3.jpg";
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -7,21 +10,24 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: "Handmade Basket",
-      description: "Beautiful handmade basket crafted by senior citizens.",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      name: "Product 1",
+      description: "Product 1 description",
+      image: product1,
+      price: 1000,
     },
     {
       id: 2,
-      name: "Knitted Sweater",
-      description: "Warm and cozy sweater knitted with love by senior citizens.",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      name: "Product 2",
+      description: "Product 2 description",
+      image: product2,
+      price: 2000,
     },
     {
       id: 3,
-      name: "Clay Pottery",
-      description: "Traditional clay pottery crafted with care.",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      name: "Product 3",
+      description: "Product 3 description",
+      image: product3,
+      price: 3000,
     },
   ];
 

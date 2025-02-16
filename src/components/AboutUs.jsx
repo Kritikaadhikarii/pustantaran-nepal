@@ -1,4 +1,3 @@
-import Hero from "./Hero";
 import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
@@ -6,8 +5,6 @@ import img3 from "../assets/3.jpg";
 const AboutUs = () => {
   return (
     <>
-      <Hero />
-
       <section className="bg-gray-100 py-12 px-6">
         {/* About Us Section */}
         <div className="container mx-auto mb-16 max-w-4xl">

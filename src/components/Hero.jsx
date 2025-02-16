@@ -1,4 +1,5 @@
-import Carousel from "./Carousel";
+import GalleryCarousel from "./GalleryCarousel";
+import ProductCarousel from "./ProductCarousel";
 import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
@@ -14,13 +15,13 @@ const Hero = () => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="px-6 text-lg font-semibold text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, suscipit.
+              Join us in this innovative journey !
             </h1>
             <p className="mt-5 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight">
-              Lorem ipsum dolor sit amet.{" "}
+            Building a better society for our beloved senior{" "}
               <span className="relative inline-flex sm:inline">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg opacity-30"></span>
-                <span className="relative">Lorem</span>
+                <span className="relative">citizen</span>
               </span>
             </p>
 
@@ -33,13 +34,14 @@ const Hero = () => {
               </a>
             </div>
             <p className="my-6 text-base text-gray-500">
-              Lorem ipsum dolor sit amet consectetur.
+              Every support can create a big impact. Let's join hands to make a better society for our senior citizens.
             </p>
           </div>
         </div>
 
         {/* Carousel Section */}
-        <Carousel images={images} />
+        <GalleryCarousel images={images} />
+        <ProductCarousel images={images}/>
       </section>
     </div>
   );

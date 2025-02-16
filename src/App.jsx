@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AboutUs from "./components/AboutUs";
 import Background from "./components/Background";
@@ -10,6 +10,7 @@ import Team from "./components/Team";
 import WhyUs from "./components/WhyUs";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 
         {/* Routes */}
         <Routes>
-          <Route path="/" element={<AboutUs />} />
+          <Route path="/" element={<Hero />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/background" element={<Background />} />
           <Route path="/funding" element={<Funding />} />
