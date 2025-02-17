@@ -83,6 +83,60 @@ const Funding = () => {
           Hospital and Senior Citizen Care Center, thereby promoting the welfare and dignity of Nepal’s senior citizens.
         </p>
       </div>
+
+      {/* List of Contributors */}
+      <div className="container mx-auto mb-12">
+        <h2 className="text-4xl mt-6 font-bold text-teal-600 text-center mb-6">
+          List of Contributors
+        </h2>
+        <div className="bg-white p-6 rounded shadow-lg">
+          <table className="w-full border-collapse border border-gray-300 text-left">
+            <thead>
+              <tr className="bg-teal-500 text-white">
+                <th className="border border-gray-300 px-4 py-2">Name</th>
+                <th className="border border-gray-300 px-4 py-2">Address</th>
+                <th className="border border-gray-300 px-4 py-2">Contact Information</th>
+                <th className="border border-gray-300 px-4 py-2">Email</th>
+                <th className="border border-gray-300 px-4 py-2">Motivation for Contribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">[Name]</td>
+                <td className="border border-gray-300 px-4 py-2">[Address]</td>
+                <td className="border border-gray-300 px-4 py-2">[Contact]</td>
+                <td className="border border-gray-300 px-4 py-2">[Email]</td>
+                <td className="border border-gray-300 px-4 py-2">[Motivation]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Our Supporters */}
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-bold text-teal-600 text-center mb-6">
+          Our Supporters
+        </h2>
+        <div className="bg-white p-6 rounded shadow-lg">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <a href="https://partner-website.com" target="_blank" rel="noreferrer">
+              <img
+                src="/path-to-logo-1.png"
+                alt="Partner 1"
+                className="w-full h-20 object-contain"
+              />
+            </a>
+            <a href="https://partner-website.com" target="_blank" rel="noreferrer">
+              <img
+                src="/path-to-logo-2.png"
+                alt="Partner 2"
+                className="w-full h-20 object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

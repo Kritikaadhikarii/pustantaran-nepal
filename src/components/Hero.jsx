@@ -5,21 +5,28 @@ import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
 import img4 from "../assets/4.jpg";
+import mainBg from "../assets/main.jpg";
 
 const Hero = () => {
-  const images = [img1, img2, img3, img4]; // Use imported images here
+  const images = [img1, img2, img3, img4];
 
   return (
-    <div className="overflow-x-hidden bg-gray-50">
-      {/* Hero Section */}
-      <section className="pt-12 bg-gray-50 sm:pt-16">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div className="overflow-x-hidden">
+      {/* Hero Section with background */}
+      <section className="relative h-screen flex items-center justify-center">
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${mainBg})` }}
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="px-6 text-lg font-semibold text-gray-600">
+            <h1 className="px-6 text-lg font-semibold text-white">
               Join us in this innovative journey !
             </h1>
-            <p className="mt-5 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight">
-            Building a better society for our beloved senior{" "}
+            <p className="mt-5 text-4xl font-bold leading-tight text-white sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight">
+              Building a better society for our beloved senior{" "}
               <span className="relative inline-flex sm:inline">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg opacity-30"></span>
                 <span className="relative">citizen</span>
@@ -34,13 +41,15 @@ const Hero = () => {
                 Support Us
               </a>
             </div>
-            <p className="my-6 text-base text-gray-500">
+            <p className="my-6 text-base text-white">
               Every support can create a big impact. Let's join hands to make a better society for our senior citizens.
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Carousel Section */}
+      {/* Carousel Section */}
+      <section className="bg-gray-50">
         <GalleryCarousel images={images} />
         <ProductCarousel images={images}/>
         <SocialCarousel />

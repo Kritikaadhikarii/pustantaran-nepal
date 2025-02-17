@@ -27,7 +27,7 @@ const ProductCarousel = () => {
       }}
     >
       <div
-        className={`flex items-center gap-6 ${
+        className={`flex items-center gap-2 sm:gap-4 md:gap-6 ${
           isHovered ? "animation-paused" : "animate-scroll"
         }`}
         style={{
@@ -37,7 +37,7 @@ const ProductCarousel = () => {
         {duplicatedImages.map((src, index) => (
           <div
             key={index}
-            className="relative w-[500px] h-[400px] flex-shrink-0"
+            className="relative w-[250px] h-[200px] sm:w-[300px] sm:h-[240px] md:w-[320px] md:h-[260px] lg:w-[350px] lg:h-[280px] flex-shrink-0"
             onMouseEnter={() => setHoveredIndex(index)}
           >
             <img
@@ -48,9 +48,9 @@ const ProductCarousel = () => {
             {hoveredIndex === index && (
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
                 <button
-                  className="bg-white text-teal-600 font-semibold py-2 px-4 rounded-lg"
+                  className="bg-white text-teal-600 font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-sm sm:text-base"
                   style={{ zIndex: 10 }}
-                  onClick={() => navigate("/products")} // Changed navigation
+                  onClick={() => navigate("/products")}
                 >
                   View All Products
                 </button>
