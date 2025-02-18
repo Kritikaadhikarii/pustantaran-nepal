@@ -29,12 +29,12 @@ const AboutUs = () => {
         <>
           {/* About Us Section */}
           <div className="container mx-auto mb-16 max-w-4xl">
-            <h2 className="text-4xl font-extrabold text-teal-600 text-center mb-10 relative">
+          <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4 relative">
               About Us
-              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full"></span>
-              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full"></span>
+              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full -z-10"></span>
+              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full -z-10"></span>
             </h2>
-            <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start">
+            <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start z-10">
               <img
                 src={img1}
                 alt="About Us"
@@ -42,7 +42,7 @@ const AboutUs = () => {
               />
               <div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Pustantaran Nepal is registered as a profit-not-distributing company
+                  <span className='font-semibold text-teal-600 text-xl'>Pustantaran Nepal</span> is registered as a profit-not-distributing company
                   with the Office of the Company Registrar in Kathmandu. The
                   organization was founded by a group of middle-aged professionals
                   from both the profit and non-profit sectors who came together with
@@ -61,14 +61,14 @@ const AboutUs = () => {
 
           {/* Vision, Mission, and Objectives Section */}
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-4xl font-extrabold text-teal-600 text-center mb-10 relative">
+          <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-8 relative">
               Vision, Mission, and Objectives
-              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full"></span>
-              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full"></span>
+              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full -z-10"></span>
+              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full -z-10"></span>
             </h2>
 
             {/* Vision Section */}
-            <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg mb-12">
+            <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg mb-12 z-10">
               <img
                 src={img2}
                 alt="Vision"
@@ -86,7 +86,7 @@ const AboutUs = () => {
             </div>
 
             {/* Mission Section */}
-            <div className="flex flex-col md:flex-row-reverse items-center bg-white shadow-lg rounded-lg mb-12">
+            <div className="flex flex-col md:flex-row-reverse items-center bg-white shadow-lg rounded-lg mb-12 z-10">
               <img
                 src={img3}
                 alt="Mission"
@@ -115,7 +115,7 @@ const AboutUs = () => {
                   <li>
                     To organize awareness programs, provide technical support, and
                     engage in evidence-based advocacy to enhance societal understanding
-                    of senior citizens' issues and foster a positive perception of
+                    of senior citizens&apos; issues and foster a positive perception of
                     aging.
                   </li>
                   <li>

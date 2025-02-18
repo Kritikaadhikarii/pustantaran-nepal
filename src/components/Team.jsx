@@ -3,7 +3,7 @@ const Team = () => {
     <section className="bg-gray-100 py-10 px-4 sm:px-6">
       {/* The Team Section */}
       <div className="max-w-5xl mx-auto mb-12">
-        <h2 className="text-4xl font-bold text-teal-600 text-center mb-6">
+      <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4">
           The Team
         </h2>
         <div className="bg-white p-6 rounded shadow-lg">
@@ -11,7 +11,7 @@ const Team = () => {
             Initially, a group of 11 individuals came together to address the
             critical issues faced by senior citizens. We believe in taking
             small, foundational steps before embarking on a larger journey. Our
-            vision is to expand the organization's membership to 10,000
+            vision is to expand the organization&apos;s membership to 10,000
             individuals, as we are confident that many share our passion for
             contributing to the noble cause of providing dignified care for
             senior citizens.
@@ -22,7 +22,7 @@ const Team = () => {
       {/* Message from Executive Director */}
       <div className="max-w-5xl mx-auto">
         <div className="relative">
-          <h2 className="text-4xl font-bold text-teal-600 text-center mb-12">
+          <h2 className="text-4xl font-bold text-teal-500 text-center mb-12">
             Message from Executive Director
           </h2>
           <div className="absolute w-24 h-1 bg-teal-500 bottom-0 left-1/2 transform -translate-x-1/2 -mb-6"></div>
@@ -37,12 +37,12 @@ const Team = () => {
             <p className="text-gray-700 leading-relaxed">
               It is my great pleasure to welcome you to Pustantaran Nepal and urge
               everyone to join us in our crusade for senior care. A popular Nepali
-              proverb, <span className="font-semibold text-teal-700">"Aago tapnu mudhako kura sunnu budha ko"</span> –{" "}
-              <em className="text-gray-600">"Get warmth from the log, listen to the older persons,"</em>{" "}
+              proverb, <span className="font-semibold text-teal-700">&quot;Aago tapnu mudhako kura sunnu budha ko&quot;</span> –{" "}
+              <em className="text-gray-600">&quot;Get warmth from the log, listen to the older persons,&quot;</em>{" "}
               shows great respect for senior citizens. It coincidentally
               correlates with an African saying,{" "}
               <span className="font-semibold text-teal-700">
-                "When an old man dies, a library burns to the ground."
+                &quot;When an old man dies, a library burns to the ground.&quot;
               </span>{" "}
               Senior citizens are a source of knowledge and inspiration – the real
               gurus. This precisely reflects the role of senior citizens.

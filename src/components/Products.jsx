@@ -124,7 +124,7 @@ ${fullName}
       <div className="relative z-10">
         {/* Title */}
         <div className="container mx-auto mb-16 text-center">
-          <h2 className="text-4xl font-bold text-teal-600 mb-4 animate-fade-in">
+        <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4">
             Products from Senior Citizens
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">

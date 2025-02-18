@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Contributors from "./Contributors";
 import logo from "../assets/logo.png";
 
@@ -39,12 +39,12 @@ const Funding = () => {
               {/* Members' Contributions */}
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full max-w-md">
                 <h3 className="font-playfair text-2xl font-semibold text-teal-500 mb-4">
-                  Members' Contributions
+                  Members&apos; Contributions
                 </h3>
                 <p className="text-gray-700 mb-4">
                   Our members have pledged to contribute their time and resources toward the cause of senior citizens. Initially
                   founded by 11 members, we aim to expand our membership to 10,000 individuals. Funds will be raised through
-                  membership fees and annual contributions, supporting the organization's growth and sustainability.
+                  membership fees and annual contributions, supporting the organization&apos;s growth and sustainability.
                 </p>
                 <p className="text-gray-700">
                   Members and their families will receive priority access to services and discounts. The benefits of membership will
@@ -114,7 +114,7 @@ const Funding = () => {
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full mb-12">
                 <p className="text-gray-700 text-lg">
                   Through these combined efforts, we are confident in raising the necessary capital to establish and sustain the Geriatric
-                  Hospital and Senior Citizen Care Center, thereby promoting the welfare and dignity of Nepal's senior citizens.
+                  Hospital and Senior Citizen Care Center, thereby promoting the welfare and dignity of Nepal&apos;s senior citizens.
                 </p>
               </div>
 

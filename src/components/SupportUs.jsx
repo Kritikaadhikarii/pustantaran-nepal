@@ -26,7 +26,7 @@ const SupportUs = () => {
         <>
           {/* Support Us Section */}
           <div className="container mx-auto mb-12">
-            <h2 className="text-4xl font-bold text-teal-600 text-center mb-6">
+          <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4">
               Support Us
             </h2>
             <div className="bg-white p-6 rounded shadow-lg">
@@ -59,7 +59,7 @@ const SupportUs = () => {
 
           {/* Benefits of Becoming a Member */}
           <div className="container mx-auto mb-12">
-            <h2 className="text-4xl font-bold text-teal-600 text-center mb-6">
+          <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4">
               Benefits of Becoming a Member
             </h2>
             <div className="bg-white p-6 rounded shadow-lg">
@@ -89,12 +89,12 @@ const SupportUs = () => {
                 <li>
                   <strong>Personal Fulfillment:</strong> Membership offers the
                   satisfaction of being part of a meaningful, impactful cause that
-                  improves the lives of senior citizens and enhances the community's
+                  improves the lives of senior citizens and enhances the community&apos;s
                   social fabric.
                 </li>
                 <li>
                   <strong>Updates and Involvement:</strong> Members will be
-                  regularly informed about the organization's initiatives, progress,
+                  regularly informed about the organization&apos;s initiatives, progress,
                   and future opportunities to engage in advocacy, events, and
                   campaigns.
                 </li>

@@ -29,10 +29,10 @@ const GalleryGrid = ({ images }) => {
           our senior citizens.
         </p>
         <button
-          onClick={() => navigate("/about-gallery")}
+          onClick={() => navigate("/gallery")}
           className="text-teal-700 hover:text-teal-800 font-medium inline-flex items-center gap-1 transition-colors"
         >
-          More about our community
+          Get to know more through images
           <FaArrowRight className="w-4 h-4" />
         </button>
       </div>
@@ -74,13 +74,6 @@ const GalleryGrid = ({ images }) => {
             </button>
           </div>
 
-          {/* View Full Gallery Button */}
-          <button
-            className="bg-gradient-to-r from-teal-700 to-teal-600 text-white font-semibold py-2.5 px-8 rounded-lg mt-6 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:from-teal-600 hover:to-teal-700 font-poppins text-sm"
-            onClick={() => navigate("/gallery")}
-          >
-            View Full Gallery
-          </button>
         </div>
       </div>
     </div>
