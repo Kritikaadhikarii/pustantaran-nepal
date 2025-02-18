@@ -10,7 +10,7 @@ import { BsPeopleFill, BsPersonVcard } from "react-icons/bs";
 
 const WhyUs = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20 px-6">
+    <section className="bg-gradient-to-b from-white to-teal-50 py-20 px-6">
       {/* Why Choose Us Section */}
       <div className="container mx-auto mb-16 max-w-7xl">
         <h2 className=" text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4">

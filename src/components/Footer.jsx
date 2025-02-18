@@ -4,9 +4,9 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaEnvel
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-teal-600 pt-8 md:pt-12 pb-6">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
+    <footer className="bg-gradient-to-b from-white to-teal-50 text-teal-600 pt-8 md:pt-12 pb-6 w-full">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 justify-items-center md:justify-items-stretch">
           {/* Column 1: Logo and About */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             <img src={logo} alt="Pustantaran Nepal Logo" className="h-16" />
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="text-center text-sm pt-8 border-t border-teal-200">
+        <div className="text-center text-sm pt-8 border-t border-teal-200 max-w-full">
           &copy; {new Date().getFullYear()} Pustantaran Nepal. All rights reserved.
         </div>
       </div>

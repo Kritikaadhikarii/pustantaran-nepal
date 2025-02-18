@@ -28,7 +28,7 @@ const Team = () => {
           <div className="absolute w-24 h-1 bg-teal-500 bottom-0 left-1/2 transform -translate-x-1/2 -mb-6"></div>
         </div>
         
-        <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-xl border-l-4 border-teal-500">
+        <div className="bg-gradient-to-b from-white to-teal-50 p-6 sm:p-8 lg:p-10 rounded-lg shadow-xl border-l-4 border-teal-500">
           <div className="space-y-6">
             <div className="flex items-center justify-center mb-8">
               <span className="text-4xl text-teal-600 opacity-20">"</span>

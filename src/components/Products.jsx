@@ -201,7 +201,7 @@ ${fullName}
               </div>
               <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
                 After clicking <span className="text-teal-600 font-semibold">Proceed</span>, 
-                you'll be directed to your email to complete the inquiry. Feel free to edit the email content as needed.
+                you&apos;ll be directed to your email to complete the inquiry. Feel free to edit the email content as needed.
               </p>
             </div>
             <div className="mt-6 flex justify-end space-x-4">

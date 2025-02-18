@@ -8,7 +8,7 @@ const AboutUs = () => {
   const [showBackground, setShowBackground] = useState(false);
 
   return (
-    <section className="bg-gray-100 py-12 px-6">
+    <section className="bg-gradient-to-b from-white to-teal-50 py-12 px-6">
       {/* Toggle Button */}
       <div className="container mx-auto max-w-4xl mb-8">
         <button
