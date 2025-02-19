@@ -37,7 +37,7 @@ const SupportHelp = () => {
 
   return (
     <div className="container mx-auto mb-16 max-w-6xl">
-      <h2 className="text-4xl font-extrabold text-teal-600 text-center mb-10 relative">
+      <h2 className="text-4xl font-extrabold text-teal-500 text-center mb-10 relative">
         How Your Support Helps
         <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full"></span>
         <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full"></span>
