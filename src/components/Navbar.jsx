@@ -28,7 +28,7 @@ const Navbar = () => {
             to="/products"
             className="hover:text-teal-900 hover:bg-teal-50 p-4 rounded-full transition duration-200"
           >
-            Products
+            Products & Services
           </Link>
           <Link
             to="/resources"

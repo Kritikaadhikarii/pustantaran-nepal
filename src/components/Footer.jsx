@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-2 md:grid md:grid-cols-2 md:gap-2 md:space-y-0">
               <Link to="/about-us" className="hover:text-teal-900 transition duration-200">About Us</Link>
               <Link to="/funding" className="hover:text-teal-900 transition duration-200">Funding</Link>
-              <Link to="/products" className="hover:text-teal-900 transition duration-200">Products</Link>
+              <Link to="/products" className="hover:text-teal-900 transition duration-200">Products & Services</Link>
               <Link to="/resources" className="hover:text-teal-900 transition duration-200">Resources</Link>
               <Link to="/support-us" className="hover:text-teal-900 transition duration-200">Support Us</Link>
             </div>
