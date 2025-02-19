@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Contributors = () => {
   return (
     <div className="container mx-auto max-w-5xl">

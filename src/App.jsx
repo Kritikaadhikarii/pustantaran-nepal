@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import AboutUs from "./components/AboutUs";
 import Background from "./components/Background";
 import Funding from "./components/Funding";
-import Products from "./components/Products";
 import Resources from "./components/Resources";
 import SupportUs from "./components/SupportUs";
 import Team from "./components/Team";
@@ -11,6 +10,7 @@ import WhyUs from "./components/WhyUs";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import ProductsAndService from "./components/ProductsAndService";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/background" element={<Background />} />
           <Route path="/funding" element={<Funding />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products" element={<ProductsAndService />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/support-us" element={<SupportUs />} />
           <Route path="/team" element={<Team />} />
