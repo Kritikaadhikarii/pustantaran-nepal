@@ -25,7 +25,7 @@ const ProductGrid = () => {
   return (
     <div>
       <h2 className="text-3xl font-bold text-center text-teal-800 mb-6 font-poppins">
-        Our Products
+      Our Products / Services
       </h2>
       <div className="text-center mb-8">
         <p className="text-gray-600 mb-4 max-w-2xl mx-auto w-[90%]">
@@ -37,7 +37,7 @@ const ProductGrid = () => {
           onClick={() => navigate("/products")}
           className="text-teal-700 hover:text-teal-800 font-medium inline-flex items-center gap-1 transition-colors"
         >
-          View all products
+          View all products / services
           <FaArrowRight className="w-4 h-4" />
         </button>
       </div>
