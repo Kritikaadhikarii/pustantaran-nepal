@@ -37,24 +37,23 @@ const SupportHelp = () => {
 
   return (
     <div className="container mx-auto mb-16 max-w-6xl">
-      <h2 className="text-4xl font-extrabold text-teal-500 text-center mb-10 relative">
+      <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-10">
         How Your Support Helps
-        <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full"></span>
-        <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full"></span>
       </h2>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {supportTiers.map((tier, index) => (
           <div 
             key={index} 
-            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105 duration-300"
           >
-            <div className="flex justify-center text-teal-600 mb-4">
+            <div className="flex justify-center text-teal-500 mb-4">
               {tier.icon}
             </div>
-            <div className="text-xl font-bold text-center mb-2 text-teal-600">
+            <div className="text-xl font-bold text-center mb-2 text-teal-600 font-playfair">
               NPR {tier.amount.toLocaleString()}
             </div>
-            <p className="text-gray-700 text-center">
+            <p className="text-gray-700 text-center leading-relaxed">
               {tier.impact}
             </p>
           </div>

@@ -5,7 +5,7 @@ import product2 from "../assets/product2.jpg";
 import product3 from "../assets/product3.jpg";
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
-const productImages = [product1, product2, product3];
+const productImages = [product1, product2, product3,product1, product2, product3];
 
 const ProductGrid = () => {
   const [startIndex, setStartIndex] = useState(0);
