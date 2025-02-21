@@ -1,36 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import product1 from "../assets/product1.jpg";
 import product2 from "../assets/product2.jpg";
 import product3 from "../assets/product3.jpg";
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
-const productImages = [product1, product2, product3,product1, product2, product3];
+const productImages = [product1, product2, product3, product1, product2, product3];
 
 const ProductGrid = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate();
+  const intervalRef = useRef(null);
 
-  const handlePrev = () => {
-    setStartIndex((prev) => (prev > 0 ? prev - 1 : productImages.length - 3));
-  };
+  const handlePrev = useCallback(() => {
+    setStartIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+  }, []);
 
-  const handleNext = () => {
-    setStartIndex((prev) => (prev < productImages.length - 3 ? prev + 1 : 0));
-  };
+  const handleNext = useCallback(() => {
+    setStartIndex((prev) => (prev + 1) % productImages.length);
+  }, []);
 
-  // Get current 3 images
-  const displayImages = productImages.slice(startIndex, startIndex + 3);
+  useEffect(() => {
+    intervalRef.current = setInterval(handleNext, 1500);
+    return () => clearInterval(intervalRef.current);
+  }, [handleNext]);
+
+  // Get current 3 images with wraparound
+  const displayImages = Array(3).fill(null).map((_, i) => {
+    const index = (startIndex + i) % productImages.length;
+    return productImages[index];
+  });
 
   return (
     <div>
       <h2 className="text-3xl font-bold text-center text-teal-800 mb-6 font-poppins">
-      Our Products / Services
+        Our Products / Services
       </h2>
       <div className="text-center mb-8">
         <p className="text-gray-600 mb-4 max-w-2xl mx-auto w-[90%]">
-          Discover our range of handcrafted products made by senior citizens. 
-          Each item tells a story of skill, dedication, and creativity while 
+          Discover our range of handcrafted products made by senior citizens.
+          Each item tells a story of skill, dedication, and creativity while
           supporting their independence and dignity.
         </p>
         <button
@@ -43,7 +53,11 @@ const ProductGrid = () => {
       </div>
       <div className="py-4">
         <div className="flex flex-col items-center">
-          <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
+          <div
+            className="flex items-center gap-1 sm:gap-2 lg:gap-4"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {/* Left Arrow */}
             <button
               onClick={handlePrev}
@@ -78,7 +92,6 @@ const ProductGrid = () => {
               <FaChevronRight size={20} className="sm:w-6 sm:h-6" />
             </button>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
 const GalleryGrid = ({ images }) => {
   const [startIndex, setStartIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate();
+  const intervalRef = useRef(null);
 
-  const handlePrev = () => {
-    setStartIndex((prev) => (prev > 0 ? prev - 1 : images.length - 3));
-  };
+  const handlePrev = useCallback(() => {
+    setStartIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
 
-  const handleNext = () => {
-    setStartIndex((prev) => (prev < images.length - 3 ? prev + 1 : 0));
-  };
+  const handleNext = useCallback(() => {
+    setStartIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
 
-  // Get current 3 images
-  const displayImages = images.slice(startIndex, startIndex + 3);
+  useEffect(() => {
+    intervalRef.current = setInterval(handleNext, 1500);
+    return () => clearInterval(intervalRef.current);
+  }, [handleNext]);
+
+  // Get current 3 images with wraparound
+  const displayImages = Array(3).fill(null).map((_, i) => {
+    const index = (startIndex + i) % images.length;
+    return images[index];
+  });
 
   return (
     <div>
@@ -38,7 +48,11 @@ const GalleryGrid = ({ images }) => {
       </div>
       <div className="py-4">
         <div className="flex flex-col items-center">
-          <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
+          <div 
+            className="flex items-center gap-1 sm:gap-2 lg:gap-4"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {/* Left Arrow */}
             <button
               onClick={handlePrev}
