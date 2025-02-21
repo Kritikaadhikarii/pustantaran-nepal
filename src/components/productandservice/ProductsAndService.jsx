@@ -1,7 +1,5 @@
+/* eslint-disable no-undef */
 import { useState } from "react";
-import { FaShoppingBag } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { BiPhone } from 'react-icons/bi';
 import Product from './Product';
 import Service from './Service';
 
@@ -200,14 +198,12 @@ ${fullName}`
             className="bg-white p-8 rounded-xl shadow-2xl w-11/12 max-w-md transform transition-all"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold text-teal-600 mb-6 flex items-center gap-2">
-              {productForInquiry ? <FaShoppingBag /> : serviceIcons[serviceForInquiry?.title]} 
+            <h3 className="text-2xl font-bold text-teal-600 mb-6">
               Contact Details for {productForInquiry ? 'Product' : 'Service'} Inquiry
             </h3>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-1">
-                  <MdEmail className="text-teal-500" />
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
                 </label>
                 <input
@@ -219,8 +215,7 @@ ${fullName}`
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-1">
-                  <BiPhone className="text-teal-500" />
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Contact Number
                 </label>
                 <input

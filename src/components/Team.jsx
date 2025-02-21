@@ -31,7 +31,7 @@ const Team = () => {
         <div className="bg-gradient-to-b from-white to-teal-50 p-6 sm:p-8 lg:p-10 rounded-lg shadow-xl border-l-4 border-teal-500">
           <div className="space-y-6">
             <div className="flex items-center justify-center mb-8">
-              <span className="text-4xl text-teal-600 opacity-20">"</span>
+              <span className="text-4xl text-teal-600 opacity-20">&quot;</span>
             </div>
             
             <p className="text-gray-700 leading-relaxed">

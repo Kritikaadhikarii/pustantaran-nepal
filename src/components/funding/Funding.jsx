@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Contributors from "./Contributors";
-import logo from "../assets/logo.png";
-import qrCode from "../assets/qr.png"; // Add this import
+import logo from "../../assets/logo.png";
+import qrCode from "../../assets/qr.png"; // Add this import
 
 const Funding = () => {
   const [showContributors, setShowContributors] = useState(false);

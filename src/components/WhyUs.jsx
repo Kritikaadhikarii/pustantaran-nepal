@@ -107,7 +107,7 @@ const WhyUs = () => {
             </div>
             <div className="space-y-4">
               <p className="text-gray-700 leading-relaxed">
-                Pustantaran Nepal will raise awareness about senior citizens'
+                Pustantaran Nepal will raise awareness about senior citizens&apos;
                 issues to ensure they are not neglected in society. Our goal is
                 to sensitize the public about the rights of senior citizens and
                 create an environment where they are respected, and their

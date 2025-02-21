@@ -1,16 +1,16 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import AboutUs from "./components/AboutUs";
-import Background from "./components/Background";
-import Funding from "./components/Funding";
+import AboutUs from "./components/about/AboutUs";
+import Background from "./components/about/Background";
 import Resources from "./components/Resources";
-import SupportUs from "./components/SupportUs";
+import SupportUs from "./components/support/SupportUs";
 import Team from "./components/Team";
 import WhyUs from "./components/WhyUs";
 import Gallery from "./components/Gallery";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import ProductsAndService from "./components/ProductsAndService";
+import Navbar from "./components/constant/Navbar";
+import Footer from "./components/constant/Footer";
+import Hero from "./components/home/Hero";
+import Funding from "./components/funding/Funding";
+import ProductsAndService from "./components/productandservice/ProductsAndService";
 
 function App() {
   return (

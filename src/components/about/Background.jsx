@@ -25,9 +25,9 @@ const Background = () => {
 
       {/* Aging Population Section */}
       <div className="bg-white p-8 rounded-lg shadow-lg mb-12">
-        <h3 className="text-2xl font-bold text-teal-500 mb-4">Nepal's Aging Population</h3>
+        <h3 className="text-2xl font-bold text-teal-500 mb-4">Nepal&apos;s Aging Population</h3>
         <p className="text-gray-700 leading-relaxed mb-4">
-          According to the 2021 census, out of Nepal's total population of 29.1 million, over 2.9 million people are aged 60
+          According to the 2021 census, out of Nepal&apos;s total population of 29.1 million, over 2.9 million people are aged 60
           and above, constituting more than 10% of the total population. Additionally, 10.8 million people are aged 30 to
           59, a group that is either moving toward old age or engaged in foreign employment.
         </p>
@@ -40,8 +40,8 @@ const Background = () => {
       {/* Quote Section */}
       <div className="bg-gradient-to-r from-teal-500 to-blue-500 text-white p-8 rounded-lg shadow-lg mb-12">
         <blockquote className="italic text-lg text-center">
-          "I had to ask my wife to leave her job to take care of my elderly mother because care homes in Nepal are not
-          adequate," says Ramu Lamsal (name changed), a working professional who had to compromise his wife's career. There
+          &quot;I had to ask my wife to leave her job to take care of my elderly mother because care homes in Nepal are not
+          adequate,&quot; says Ramu Lamsal (name changed), a working professional who had to compromise his wife&apos;s career. There
           is significant social stigma associated with placing elderly family members in care homes.
         </blockquote>
       </div>
@@ -52,7 +52,7 @@ const Background = () => {
         <p className="text-gray-700 leading-relaxed mb-4">
           Nepal urgently needs a robust elderly care system. Youths, busy with their careers or migrating abroad, often lack
           the time and knowledge to care for their elderly parents. Furthermore, there are very few institutions dedicated
-          to senior citizens' care.
+          to senior citizens&apos; care.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
           Elderly people possess vast experience across various fields, which could contribute significantly to societal

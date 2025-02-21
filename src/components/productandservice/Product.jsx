@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { IoMdClose } from 'react-icons/io';
-import product1 from "../assets/product1.jpg";
-import product2 from "../assets/product2.jpg";
-import product3 from "../assets/product3.jpg";
+import product1 from "../../assets/product1.jpg";
+import product2 from "../../assets/product2.jpg";
+import product3 from "../../assets/product3.jpg";
 
 const Product = ({ handleInquiry, selectedProduct, setSelectedProduct }) => {
   const products = [

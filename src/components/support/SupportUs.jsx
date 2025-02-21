@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import SupportHelp from "./SupportHelp";
-import qrCode from "../assets/qr.png";
+import qrCode from "../../assets/qr.png";
 
 const SupportUs = () => {
   const [viewMode, setViewMode] = useState('all'); // 'all', 'benefits', 'support'
@@ -175,7 +176,7 @@ const SupportUs = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-teal-600 mb-2 text-center">Personal Fulfillment</h3>
-              <p className="text-gray-600 text-center">Membership offers the satisfaction of being part of a meaningful, impactful cause that improves the lives of senior citizens and enhances the community's social fabric.</p>
+              <p className="text-gray-600 text-center">Membership offers the satisfaction of being part of a meaningful, impactful cause that improves the lives of senior citizens and enhances the community&apos;s social fabric.</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -185,7 +186,7 @@ const SupportUs = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-teal-600 mb-2 text-center">Updates and Involvement</h3>
-              <p className="text-gray-600 text-center">Members will be regularly informed about the organization's initiatives, progress, and future opportunities to engage in advocacy, events, and campaigns.</p>
+              <p className="text-gray-600 text-center">Members will be regularly informed about the organization&apos;s initiatives, progress, and future opportunities to engage in advocacy, events, and campaigns.</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">

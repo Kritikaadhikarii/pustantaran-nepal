@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Background from "./Background";
-import img1 from "../assets/1.jpg";
-import img2 from "../assets/2.jpg";
-import img3 from "../assets/3.jpg";
+import img2 from "../../assets/2.jpg";
+import img3 from "../../assets/3.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const AboutUs = () => {
@@ -79,15 +78,15 @@ const AboutUs = () => {
               <p>
                 We are determined to change the narrative around senior care.
                 Providing proper care centres and necessary support is not about
-                abandoning one's parents but about creating a conducive
+                abandoning one&apos;s parents but about creating a conducive
                 environment for their happiness and dignity.
               </p>
               <p>
                 Pustantaran Nepal aims to offer professional support and
                 services to senior citizens, enabling them to live fulfilling,
                 dignified lives. Life is unpredictable, regardless of age. We
-                want to break the stigma that elderly people are "settling
-                stars" (Danda Mathiko Jun) and instead provide them with an
+                want to break the stigma that elderly people are &quot;settling
+                stars&quot; (Danda Mathiko Jun) and instead provide them with an
                 environment that values and cherishes them throughout their
                 lifetime.
               </p>
@@ -121,17 +120,17 @@ const AboutUs = () => {
                 but could not secure jobs, toil in Gulf countries.
                 <br />
                 <br />
-                According to the 2021 census, out of Nepal's total population of
+                According to the 2021 census, out of Nepal&apos;s total population of
                 29.1 million, over 2.9 million people are aged 60 and above,
                 constituting more than 10% of the total population.
                 Additionally, 10.8 million people are aged 30 to 59, a group
                 that is either moving toward old age or engaged in foreign
                 employment. If current trends continue, Nepal will face
-                significant challenges in the coming years. Senior citizens'
+                significant challenges in the coming years. Senior citizens&apos;
                 issues require immediate attention, as life expectancy in Nepal
                 has increased to 70.48 years, while the birth rate is gradually
                 declining. However, this issue remains under prioritized due to
-                the country's numerous other challenges.
+                the country&apos;s numerous other challenges.
                 <br />
                 <br />
                 The census also indicates that Nepal has approximately 8.2
@@ -152,7 +151,7 @@ const AboutUs = () => {
                 says Ramu Lamsal (name changed), a working professional who had
                 to compromise his wife’s career. Additionally, there is
                 significant social stigma associated with placing elderly family
-                members in care homes. Ramu's case is not unique—many people in
+                members in care homes. Ramu&apos;s case is not unique—many people in
                 Nepal have had to sacrifice their careers for elderly care to
                 avoid social judgment.
                 <br />
@@ -160,7 +159,7 @@ const AboutUs = () => {
                 Nepal urgently needs a robust elderly care system. Youths, busy
                 with their careers or migrating abroad, often lack the time and
                 knowledge to care for their elderly parents. Furthermore, there
-                are very few institutions dedicated to senior citizens' care.
+                are very few institutions dedicated to senior citizens&apos; care.
                 Elderly individuals deserve the support, love, and affection
                 they need in their later years. However, societal neglect has
                 left many vulnerable to violence, often due to conflicts over
@@ -250,7 +249,7 @@ const AboutUs = () => {
                   <li>
                     To organize awareness programs, provide technical support,
                     and engage in evidence-based advocacy to enhance societal
-                    understanding of senior citizens' issues and foster a
+                    understanding of senior citizens&apos; issues and foster a
                     positive perception of aging.
                   </li>
                   <li>

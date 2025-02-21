@@ -1,15 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import SocialCarousel from "./SocialCarousel";
-import img1 from "../assets/1.jpg";
-import img2 from "../assets/2.jpg";
-import img3 from "../assets/3.jpg";
-import img4 from "../assets/4.jpg";
-import mainBg from "../assets/main.jpg";
+import img1 from "../../assets/1.jpg";
+import img2 from "../../assets/2.jpg";
+import img3 from "../../assets/3.jpg";
+import img4 from "../../assets/4.jpg";
+import mainBg from "../../assets/main.jpg";
 import ProductGrid from "./ProductGrid";
 import GalleryGrid from "./GalleryGrid";
 import PartnerCarousel from './PartnerCarousel';
-import qrCode from "../assets/qr.png";
+import qrCode from "../../assets/qr.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -47,7 +46,7 @@ const Hero = () => {
               </button>
             </div>
             <p className="my-6 text-base text-white">
-              Every support can create a big impact. Let's join hands to make a better society for our senior citizens.
+              Every support can create a big impact. Let&apos;s join hands to make a better society for our senior citizens.
             </p>
           </div>
         </div>
@@ -67,10 +66,10 @@ const Hero = () => {
                 and better prospects, while those from low-income backgrounds often take up labor-intensive jobs in Gulf nations.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                According to the 2021 census, Nepal's population is 29.1 million, with over 2.9 million (10%) aged 60 and above. 
+                According to the 2021 census, Nepal&apos;s population is 29.1 million, with over 2.9 million (10%) aged 60 and above. 
                 Additionally, 10.8 million people (30–59 age group) are either nearing old age or engaged in foreign employment. 
                 Nepal is set to become an aging society by 2028, with 7% of its population being 65 or older. This shift, coupled 
-                with declining birth rates and increasing life expectancy (70.48 years), demands urgent attention to senior citizens' 
+                with declining birth rates and increasing life expectancy (70.48 years), demands urgent attention to senior citizens&apos; 
                 well-being and social integration.
               </p>
             </div>
@@ -81,9 +80,9 @@ const Hero = () => {
             <div className="text-gray-600 text-md mb-8 space-y-6 leading-relaxed font-poppins">
             <p className="text-gray-600 mb-8 leading-relaxed">
                 Pustantaran Nepal is a profit-not-distributing organization registered in Kathmandu, founded by professionals 
-                from the profit and non-profit sectors. We aim to address senior citizens' challenges by ensuring their dignity, 
-                care, and knowledge sharing opportunities. Aging is a gift, not a burden, and seniors' vast experiences can 
-                contribute to society's growth. We advocate for proper care, intergenerational learning, and policies that 
+                from the profit and non-profit sectors. We aim to address senior citizens&apos; challenges by ensuring their dignity, 
+                care, and knowledge sharing opportunities. Aging is a gift, not a burden, and seniors&apos; vast experiences can 
+                contribute to society&apos;s growth. We advocate for proper care, intergenerational learning, and policies that 
                 enhance the lives of elderly citizens.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
@@ -201,7 +200,7 @@ const Hero = () => {
           <div className="text-center mb-12">
             <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
               Stay connected with our latest activities, events, and success stories. 
-              Follow us on social media to see how we're making a difference in 
+              Follow us on social media to see how we&apos;re making a difference in 
               the lives of senior citizens.
             </p>
             <div className="flex justify-center gap-6">
