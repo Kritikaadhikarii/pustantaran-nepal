@@ -7,6 +7,33 @@ import { FaArrowRight } from "react-icons/fa";
 const AboutUs = () => {
   const [showBackground, setShowBackground] = useState(false);
 
+  const advisors = [
+    {
+      name: "Dr. Lorem Ipsum",
+      title: "Senior Medical Advisor",
+      expertise: "Geriatric Care Specialist",
+      qualification: "MD, Geriatric Medicine"
+    },
+    {
+      name: "Prof. Ipsum Dolor",
+      title: "Strategic Advisor",
+      expertise: "Social Gerontologist",
+      qualification: "PhD, Social Work"
+    },
+    {
+      name: "Mr. Dolor Sit",
+      title: "Legal Advisor",
+      expertise: "Elder Law Specialist",
+      qualification: "LLM, Human Rights Law"
+    },
+    {
+      name: "Mrs. Sit Amet",
+      title: "Wellness Advisor",
+      expertise: "Mental Health Professional",
+      qualification: "MA, Psychology"
+    }
+  ];
+
   return (
     <section className="bg-gradient-to-b from-white to-teal-50 py-12 px-6">
       {/* Toggle Button */}
@@ -190,6 +217,44 @@ const AboutUs = () => {
               {showBackground ? "View About Us" : "Learn More About Background"}
               <FaArrowRight className="w-4 h-4" />
             </button>
+          </div>
+
+          {/* Advisors Section - Add this before Vision, Mission section */}
+          <div className="container mx-auto mb-16 max-w-4xl">
+            <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-8 relative">
+              Our Advisors
+              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full -z-10"></span>
+              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full -z-10"></span>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {advisors.map((advisor, index) => (
+                <div 
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 flex-shrink-0 bg-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                      {advisor.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-teal-600">
+                        {advisor.name}
+                      </h3>
+                      <p className="text-gray-600 font-medium">
+                        {advisor.title}
+                      </p>
+                      <p className="text-gray-500 text-sm mt-1">
+                        {advisor.expertise}
+                      </p>
+                      <p className="text-gray-400 text-sm">
+                        {advisor.qualification}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Vision, Mission, and Objectives Section */}

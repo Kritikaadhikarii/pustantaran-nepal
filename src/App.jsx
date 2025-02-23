@@ -11,6 +11,13 @@ import Footer from "./components/constant/Footer";
 import Hero from "./components/home/Hero";
 import Funding from "./components/funding/Funding";
 import ProductsAndService from "./components/productandservice/ProductsAndService";
+import AdminLogin from './components/admin/AdminLogin';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminPanel from './components/admin/AdminPanel';
+import ProductList from './components/admin/ProductList';
+import GalleryList from './components/admin/GalleryList';
+import ProductForm from "./components/admin/forms/ProductForm";
+import GalleryForm from "./components/admin/forms/GalleryForm";
 
 function App() {
   return (
@@ -31,6 +38,24 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/add-product" element={<ProtectedRoute><ProductForm /></ProtectedRoute>} />
+          <Route path="/add-gallery" element={<ProtectedRoute><GalleryForm /></ProtectedRoute>} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/adminpanel" element={
+            <ProtectedRoute>
+              <AdminPanel />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/products" element={
+            <ProtectedRoute>
+              <ProductList />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/gallery" element={
+            <ProtectedRoute>
+              <GalleryList />
+            </ProtectedRoute>
+          } />
         </Routes>
 
         <Footer />

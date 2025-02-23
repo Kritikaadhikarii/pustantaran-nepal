@@ -1,9 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import img1 from "../../assets/1.jpg";
-import img2 from "../../assets/2.jpg";
-import img3 from "../../assets/3.jpg";
-import img4 from "../../assets/4.jpg";
 import mainBg from "../../assets/main.jpg";
 import ProductGrid from "./ProductGrid";
 import GalleryGrid from "./GalleryGrid";
@@ -12,7 +8,6 @@ import qrCode from "../../assets/qr.png";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const images = [img1, img2, img3, img4];
 
   return (
     <div className="overflow-x-hidden">
@@ -184,7 +179,7 @@ const Hero = () => {
 
             {/* Gallery Section */}
             <div className="mb-16 lg:mb-0">
-              <GalleryGrid images={images} />
+              <GalleryGrid />
             </div>
           </div>
         </div>

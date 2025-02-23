@@ -1,37 +1,54 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import product1 from "../../assets/product1.jpg";
-import product2 from "../../assets/product2.jpg";
-import product3 from "../../assets/product3.jpg";
+import axios from "axios";
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
-const productImages = [product1, product2, product3, product1, product2, product3];
-
 const ProductGrid = () => {
+  const [products, setProducts] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const intervalRef = useRef(null);
 
-  const handlePrev = useCallback(() => {
-    setStartIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+  useEffect(() => {
+    fetchProducts();
   }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get('https://be-pustantarannepal.onrender.com/api/products');
+      setProducts(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      setLoading(false);
+    }
+  };
+
+  const handlePrev = useCallback(() => {
+    setStartIndex((prev) => (prev - 1 + products.length) % products.length);
+  }, [products.length]);
 
   const handleNext = useCallback(() => {
-    setStartIndex((prev) => (prev + 1) % productImages.length);
-  }, []);
+    setStartIndex((prev) => (prev + 1) % products.length);
+  }, [products.length]);
 
   useEffect(() => {
-    intervalRef.current = setInterval(handleNext, 1500);
-    return () => clearInterval(intervalRef.current);
-  }, [handleNext]);
+    if (!isPaused && products.length > 0) {
+      intervalRef.current = setInterval(handleNext, 1500);
+      return () => clearInterval(intervalRef.current);
+    }
+  }, [handleNext, isPaused, products.length]);
 
-  // Get current 3 images with wraparound
-  const displayImages = Array(3).fill(null).map((_, i) => {
-    const index = (startIndex + i) % productImages.length;
-    return productImages[index];
+  // Get current 3 products with wraparound
+  const displayProducts = Array(3).fill(null).map((_, i) => {
+    if (products.length === 0) return null;
+    const index = (startIndex + i) % products.length;
+    return products[index];
   });
+
+  if (loading) return <div className="text-center py-10">Loading products...</div>;
 
   return (
     <div>
@@ -59,7 +76,6 @@ const ProductGrid = () => {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Left Arrow */}
             <button
               onClick={handlePrev}
               className="text-teal-700 hover:text-teal-800 p-1 transition-colors duration-200 hover:bg-teal-50 rounded-full"
@@ -68,23 +84,24 @@ const ProductGrid = () => {
               <FaChevronLeft size={20} className="sm:w-6 sm:h-6" />
             </button>
 
-            {/* Product Images */}
             <div className="flex gap-2 sm:gap-2 lg:gap-4">
-              {displayImages.map((src, index) => (
+              {displayProducts.map((product, index) => product && (
                 <div
-                  key={index}
-                  className="relative w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[160px] lg:h-[160px] transform transition-transform duration-300 hover:scale-105"
-                >
-                  <img
-                    className="w-full h-full object-cover rounded-lg shadow-md"
-                    src={src}
-                    alt={`Product ${index + 1}`}
+                key={`${product._id}-${index}`}
+                className="relative w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[160px] lg:h-[160px] transform transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                    src={`https://be-pustantarannepal.onrender.com/api/products/image/${product._id}`}
+                    alt={product.name}
+                    onError={(e) => {
+                      e.target.src = '/placeholder.jpg';
+                    }}
                   />
                 </div>
               ))}
             </div>
 
-            {/* Right Arrow */}
             <button
               onClick={handleNext}
               className="text-teal-700 hover:text-teal-800 p-1 transition-colors duration-200 hover:bg-teal-50 rounded-full"
