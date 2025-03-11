@@ -81,7 +81,7 @@ const Product = ({ handleInquiry, selectedProduct, setSelectedProduct }) => {
                   }}
                   className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transform hover:scale-105 transition-all duration-300"
                 >
-                  Inquire Now
+                  Buy Now
                 </button>
               </div>
             </div>
@@ -121,7 +121,7 @@ const Product = ({ handleInquiry, selectedProduct, setSelectedProduct }) => {
                 }}
                 className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg transform hover:scale-105 transition-all duration-300"
               >
-                Inquire About This Product
+                Buy This Product
               </button>
             </div>
           </div>

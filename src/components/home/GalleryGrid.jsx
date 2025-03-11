@@ -20,7 +20,12 @@ const GalleryGrid = () => {
   const fetchImages = async () => {
     try {
       const response = await axios.get('https://be-pustantarannepal.onrender.com/api/images/all');
-      setImages(response.data);
+      // Sort and filter valid images
+      const validImages = response.data
+        .filter(img => img.filename && img.uploadDate)
+        .sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
+      console.log('Fetched images:', validImages); // Debug log
+      setImages(validImages);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -67,7 +72,7 @@ const GalleryGrid = () => {
           onClick={() => navigate("/gallery")}
           className="text-teal-700 hover:text-teal-800 font-medium inline-flex items-center gap-1 transition-colors"
         >
-          View all gallery images
+          View all gallery images and videos
           <FaArrowRight className="w-4 h-4" />
         </button>
       </div>
@@ -95,8 +100,10 @@ const GalleryGrid = () => {
                   <img
                     className="w-full h-full object-cover rounded-lg shadow-md"
                     src={`https://be-pustantarannepal.onrender.com/uploads/${image.filename}`}
-                    alt="Gallery"
+                    alt={`Gallery image ${image.filename}`}
                     onError={(e) => {
+                      console.error('Error loading image:', image.filename, image._id);
+                      e.target.onerror = null; // Prevent infinite loop
                       e.target.src = '/placeholder.jpg';
                     }}
                   />

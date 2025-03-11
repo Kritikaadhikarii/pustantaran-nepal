@@ -7,33 +7,6 @@ import { FaArrowRight } from "react-icons/fa";
 const AboutUs = () => {
   const [showBackground, setShowBackground] = useState(false);
 
-  const advisors = [
-    {
-      name: "Dr. Lorem Ipsum",
-      title: "Senior Medical Advisor",
-      expertise: "Geriatric Care Specialist",
-      qualification: "MD, Geriatric Medicine"
-    },
-    {
-      name: "Prof. Ipsum Dolor",
-      title: "Strategic Advisor",
-      expertise: "Social Gerontologist",
-      qualification: "PhD, Social Work"
-    },
-    {
-      name: "Mr. Dolor Sit",
-      title: "Legal Advisor",
-      expertise: "Elder Law Specialist",
-      qualification: "LLM, Human Rights Law"
-    },
-    {
-      name: "Mrs. Sit Amet",
-      title: "Wellness Advisor",
-      expertise: "Mental Health Professional",
-      qualification: "MA, Psychology"
-    }
-  ];
-
   return (
     <section className="bg-gradient-to-b from-white to-teal-50 py-12 px-6">
       {/* Toggle Button */}
@@ -63,67 +36,6 @@ const AboutUs = () => {
         <Background />
       ) : (
         <>
-          {/* About Us Section */}
-          <div className="container mx-auto mb-16 max-w-4xl">
-            <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4 relative">
-              About Us
-              <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full -z-10"></span>
-              <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full -z-10"></span>
-            </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                Pustantaran Nepal is registered as a profit-not-distributing
-                company with the Office of the Company Registrar in Kathmandu.
-                The organization was founded by a group of middle aged
-                professionals from both the profit and non-profit sectors who
-                came together with a shared commitment to address the critical
-                issues faced by senior citizens. Recognizing a significant gap
-                and genuine need for consistent interventions to ensure the
-                rights and well-being of senior citizens, we felt compelled to
-                act.
-              </p>
-              <p>
-                In Nepali society, the issue of senior citizens remains one of
-                the most neglected. We strongly believe in creating a supportive
-                and respectful environment for senior citizens at both the
-                household and community levels.
-              </p>
-              <p>
-                Our work is driven by the belief that aging is golden and a gift
-                from God, not a burden. Senior citizens are a wealth of
-                experience and expertise across various fields. By creating
-                opportunities to transfer their knowledge and skills to future
-                generations, we can drive positive societal change.
-              </p>
-              <p>
-                The challenges of aging are inevitable, both locally and
-                globally. By respecting and caring for our seniors, we set a
-                precedent for future generations to respect and care for us.
-                Therefore, it is imperative to foster a society that treats
-                senior citizens with dignity and respect.
-              </p>
-              <p>
-                We are determined to change the narrative around senior care.
-                Providing proper care centres and necessary support is not about
-                abandoning one&apos;s parents but about creating a conducive
-                environment for their happiness and dignity.
-              </p>
-              <p>
-                Pustantaran Nepal aims to offer professional support and
-                services to senior citizens, enabling them to live fulfilling,
-                dignified lives. Life is unpredictable, regardless of age. We
-                want to break the stigma that elderly people are &quot;settling
-                stars&quot; (Danda Mathiko Jun) and instead provide them with an
-                environment that values and cherishes them throughout their
-                lifetime.
-              </p>
-              <p>
-                Our goal is to establish a model care centre that can be
-                replicated across other regions, setting a standard for proper
-                care and support for senior citizens.
-              </p>
-            </div>
-          </div>
 
           <div className="container mx-auto mb-16 max-w-4xl">
             <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4 relative">
@@ -219,41 +131,65 @@ const AboutUs = () => {
             </button>
           </div>
 
-          {/* Advisors Section - Add this before Vision, Mission section */}
-          <div className="container mx-auto mb-16 max-w-4xl">
-            <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-8 relative">
-              Our Advisors
+                    {/* About Us Section */}
+                    <div className="container mx-auto mb-16 max-w-4xl">
+            <h2 className="text-teal-500 font-playfair text-5xl font-bold text-gradient text-center mb-4 relative">
+              About Us
               <span className="absolute -top-6 right-10 w-10 h-10 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full -z-10"></span>
               <span className="absolute -bottom-6 left-10 w-8 h-8 bg-gradient-to-tr from-teal-400 to-teal-600 rounded-full -z-10"></span>
             </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {advisors.map((advisor, index) => (
-                <div 
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                      {advisor.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-teal-600">
-                        {advisor.name}
-                      </h3>
-                      <p className="text-gray-600 font-medium">
-                        {advisor.title}
-                      </p>
-                      <p className="text-gray-500 text-sm mt-1">
-                        {advisor.expertise}
-                      </p>
-                      <p className="text-gray-400 text-sm">
-                        {advisor.qualification}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                Pustantaran Nepal is registered as a profit-not-distributing
+                company with the Office of the Company Registrar in Kathmandu.
+                The organization was founded by a group of middle aged
+                professionals from both the profit and non-profit sectors who
+                came together with a shared commitment to address the critical
+                issues faced by senior citizens. Recognizing a significant gap
+                and genuine need for consistent interventions to ensure the
+                rights and well-being of senior citizens, we felt compelled to
+                act.
+              </p>
+              <p>
+                In Nepali society, the issue of senior citizens remains one of
+                the most neglected. We strongly believe in creating a supportive
+                and respectful environment for senior citizens at both the
+                household and community levels.
+              </p>
+              <p>
+                Our work is driven by the belief that aging is golden and a gift
+                from God, not a burden. Senior citizens are a wealth of
+                experience and expertise across various fields. By creating
+                opportunities to transfer their knowledge and skills to future
+                generations, we can drive positive societal change.
+              </p>
+              <p>
+                The challenges of aging are inevitable, both locally and
+                globally. By respecting and caring for our seniors, we set a
+                precedent for future generations to respect and care for us.
+                Therefore, it is imperative to foster a society that treats
+                senior citizens with dignity and respect.
+              </p>
+              <p>
+                We are determined to change the narrative around senior care.
+                Providing proper care centres and necessary support is not about
+                abandoning one&apos;s parents but about creating a conducive
+                environment for their happiness and dignity.
+              </p>
+              <p>
+                Pustantaran Nepal aims to offer professional support and
+                services to senior citizens, enabling them to live fulfilling,
+                dignified lives. Life is unpredictable, regardless of age. We
+                want to break the stigma that elderly people are &quot;settling
+                stars&quot; (Danda Mathiko Jun) and instead provide them with an
+                environment that values and cherishes them throughout their
+                lifetime.
+              </p>
+              <p>
+                Our goal is to establish a model care centre that can be
+                replicated across other regions, setting a standard for proper
+                care and support for senior citizens.
+              </p>
             </div>
           </div>
 

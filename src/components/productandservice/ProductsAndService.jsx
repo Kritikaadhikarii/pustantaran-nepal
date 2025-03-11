@@ -34,7 +34,7 @@ const ProductsAndService = () => {
       body = encodeURIComponent(
         `Dear Pustantaran Nepal Team,
 
-I would like to inquire about the following product:
+I would like to inquire about the following product for purchasing it:
 
 --------------------
 PRODUCT DETAILS
@@ -70,7 +70,7 @@ ${fullName}`
       body = encodeURIComponent(
         `Dear Pustantaran Nepal Team,
 
-I would like to inquire about the following service:
+I would like to inquire about the following service for booking it:
 
 --------------------
 SERVICE DETAILS
@@ -199,7 +199,7 @@ ${fullName}`
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="text-2xl font-bold text-teal-600 mb-6">
-              Contact Details for {productForInquiry ? 'Product' : 'Service'} Inquiry
+              Contact details for booking {productForInquiry ? 'Product' : 'Service'}
             </h3>
             <div className="space-y-4">
               <div>
@@ -228,7 +228,7 @@ ${fullName}`
               </div>
               <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
                 After clicking <span className="text-teal-600 font-semibold">Proceed</span>, 
-                you&apos;ll be directed to your email to complete the inquiry. Feel free to edit the email content as needed.
+                you&apos;ll be directed to your email to complete the inquiry mail for buying the product. Feel free to edit the email content as needed.
               </p>
             </div>
             <div className="mt-6 flex justify-end space-x-4">

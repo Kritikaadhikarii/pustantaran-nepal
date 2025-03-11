@@ -6,6 +6,13 @@ const Gallery = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [viewMode, setViewMode] = useState('all'); // Add this line
+
+  // Add videos array
+  const videos = [
+    { id: 1, youtubeId: 'x4r0S5qoIXc' },
+    { id: 2, youtubeId: 'x4r0S5qoIXc' }
+  ];
 
   useEffect(() => {
     fetchImages();
@@ -30,28 +37,82 @@ const Gallery = () => {
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-playfair text-teal-600 font-bold mb-4">Our Gallery</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-8">
           Explore moments captured at our elderly care center, showcasing the vibrant life and activities of our community.
         </p>
+
+        {/* Add View Mode Buttons */}
+        <div className="flex justify-center gap-4 mb-8">
+          <button
+            onClick={() => setViewMode('all')}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              viewMode === 'all'
+                ? 'bg-teal-500 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            All Items
+          </button>
+          <button
+            onClick={() => setViewMode('images')}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              viewMode === 'images'
+                ? 'bg-teal-500 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            Images Only
+          </button>
+          <button
+            onClick={() => setViewMode('videos')}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              viewMode === 'videos'
+                ? 'bg-teal-500 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            Videos Only
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {images.map((image) => (
+        {viewMode !== 'videos' && images
+          .filter(image => viewMode === 'all' || viewMode === 'images')
+          .map((image) => (
+            <div
+              key={image._id}
+              className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md"
+              onClick={() => setSelectedImage(image)}
+            >
+              <img
+                src={`https://be-pustantarannepal.onrender.com/uploads/${image.filename}`}
+                alt={`Gallery image ${image.filename}`}
+                className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  console.error('Error loading image:', image.filename);
+                  e.target.onerror = null; // Prevents infinite loop
+                  e.target.src = '/default-placeholder.png'; // Use a local placeholder image
+                  e.target.classList.add('error-image'); // Optional: Add a class to style error images
+                }}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
+            </div>
+          ))}
+
+        {/* Video Grid */}
+        {viewMode !== 'images' && videos.map((video) => (
           <div
-            key={image._id}
-            className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md"
-            onClick={() => setSelectedImage(image)}
+            key={video.id}
+            className="relative aspect-video rounded-lg shadow-md overflow-hidden"
           >
-            <img
-              src={`https://be-pustantarannepal.onrender.com/uploads/${image.filename}`}
-              alt="Gallery"
-              className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
-              onError={(e) => {
-                console.error('Error loading image:', image.filename);
-                e.target.src = '/placeholder.jpg';
-              }}
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${video.youtubeId}`}
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
           </div>
         ))}
       </div>

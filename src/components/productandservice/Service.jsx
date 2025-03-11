@@ -79,7 +79,7 @@ const Service = ({ handleServiceInquiry }) => {
                   onClick={(e) => handleServiceInquiry(e, service)}
                   className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                 >
-                  Inquire About This Service
+                  Book This Service
                 </button>
               </div>
             </div>

@@ -17,11 +17,13 @@ const ProductGrid = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://be-pustantarannepal.onrender.com/api/products');
+      const response = await axios.get(
+        "https://be-pustantarannepal.onrender.com/api/products"
+      );
       setProducts(response.data);
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
       setLoading(false);
     }
   };
@@ -42,13 +44,16 @@ const ProductGrid = () => {
   }, [handleNext, isPaused, products.length]);
 
   // Get current 3 products with wraparound
-  const displayProducts = Array(3).fill(null).map((_, i) => {
-    if (products.length === 0) return null;
-    const index = (startIndex + i) % products.length;
-    return products[index];
-  });
+  const displayProducts = Array(3)
+    .fill(null)
+    .map((_, i) => {
+      if (products.length === 0) return null;
+      const index = (startIndex + i) % products.length;
+      return products[index];
+    });
 
-  if (loading) return <div className="text-center py-10">Loading products...</div>;
+  if (loading)
+    return <div className="text-center py-10">Loading products...</div>;
 
   return (
     <div>
@@ -57,9 +62,10 @@ const ProductGrid = () => {
       </h2>
       <div className="text-center mb-8">
         <p className="text-gray-600 mb-4 max-w-2xl mx-auto w-[90%]">
-          Discover our range of handcrafted products made by senior citizens.
-          Each item tells a story of skill, dedication, and creativity while
-          supporting their independence and dignity.
+          Discover a range of products made by senior citizens and services
+          targeted for senior citizens. Each item tells a story of skill,
+          dedication, and creativity while supporting their independence and
+          dignity.
         </p>
         <button
           onClick={() => navigate("/products")}
@@ -85,21 +91,24 @@ const ProductGrid = () => {
             </button>
 
             <div className="flex gap-2 sm:gap-2 lg:gap-4">
-              {displayProducts.map((product, index) => product && (
-                <div
-                key={`${product._id}-${index}`}
-                className="relative w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[160px] lg:h-[160px] transform transition-transform duration-300 hover:scale-105"
-              >
-                <img
-                  className="w-full h-full object-cover rounded-lg shadow-md"
-                    src={`https://be-pustantarannepal.onrender.com/api/products/image/${product._id}`}
-                    alt={product.name}
-                    onError={(e) => {
-                      e.target.src = '/placeholder.jpg';
-                    }}
-                  />
-                </div>
-              ))}
+              {displayProducts.map(
+                (product, index) =>
+                  product && (
+                    <div
+                      key={`${product._id}-${index}`}
+                      className="relative w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[160px] lg:h-[160px] transform transition-transform duration-300 hover:scale-105"
+                    >
+                      <img
+                        className="w-full h-full object-cover rounded-lg shadow-md"
+                        src={`https://be-pustantarannepal.onrender.com/api/products/image/${product._id}`}
+                        alt={product.name}
+                        onError={(e) => {
+                          e.target.src = "/placeholder.jpg";
+                        }}
+                      />
+                    </div>
+                  )
+              )}
             </div>
 
             <button

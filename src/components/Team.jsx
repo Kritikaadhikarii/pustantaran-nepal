@@ -1,4 +1,31 @@
 const Team = () => {
+  const advisors = [
+    {
+      name: "Dr. Lorem Ipsum",
+      title: "Senior Medical Advisor",
+      expertise: "Geriatric Care Specialist",
+      qualification: "MD, Geriatric Medicine"
+    },
+    {
+      name: "Prof. Ipsum Dolor",
+      title: "Strategic Advisor",
+      expertise: "Social Gerontologist",
+      qualification: "PhD, Social Work"
+    },
+    {
+      name: "Mr. Dolor Sit",
+      title: "Legal Advisor",
+      expertise: "Elder Law Specialist",
+      qualification: "LLM, Human Rights Law"
+    },
+    {
+      name: "Mrs. Sit Amet",
+      title: "Wellness Advisor",
+      expertise: "Mental Health Professional",
+      qualification: "MA, Psychology"
+    }
+  ];
+
   return (
     <section className="bg-gray-100 py-10 px-4 sm:px-6">
       {/* The Team Section */}
@@ -79,6 +106,39 @@ const Team = () => {
               <div className="h-1 w-16 bg-teal-500 mt-2 ml-auto"></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Advisors Section */}
+      <div className="max-w-5xl mx-auto mt-16">
+        <h2 className="text-4xl font-bold text-teal-500 text-center mb-12">Our Advisors</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {advisors.map((advisor, index) => (
+            <div 
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 flex-shrink-0 bg-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                  {advisor.name.charAt(0)}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-teal-600">
+                    {advisor.name}
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    {advisor.title}
+                  </p>
+                  <p className="text-gray-500 text-sm mt-1">
+                    {advisor.expertise}
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    {advisor.qualification}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
