@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "./components/about/AboutUs";
 import Background from "./components/about/Background";
-import Resources from "./components/Resources";
+import Resources from "./components/resources/Resources";
 import SupportUs from "./components/support/SupportUs";
 import Team from "./components/Team";
 import WhyUs from "./components/WhyUs";
