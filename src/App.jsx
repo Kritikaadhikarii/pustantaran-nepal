@@ -18,6 +18,12 @@ import ProductList from './components/admin/ProductList';
 import GalleryList from './components/admin/GalleryList';
 import ProductForm from "./components/admin/forms/ProductForm";
 import GalleryForm from "./components/admin/forms/GalleryForm";
+import ResourceForm from './components/admin/forms/ResourceForm';
+import ResourceList from './components/admin/ResourceList';
+import SupportForm from './components/admin/forms/SupportForm';
+import SupportersView from './components/admin/SupportersView';
+import AddMember from './components/admin/pages/AddMember';
+import AdminMemberList from './components/admin/MemberList';
 
 function App() {
   return (
@@ -40,6 +46,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/add-product" element={<ProtectedRoute><ProductForm /></ProtectedRoute>} />
           <Route path="/add-gallery" element={<ProtectedRoute><GalleryForm /></ProtectedRoute>} />
+          <Route path="/add-resource" element={<ProtectedRoute><ResourceForm /></ProtectedRoute>} />
+          <Route path="/add-supporter" element={<ProtectedRoute><SupportForm /></ProtectedRoute>} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/adminpanel" element={
             <ProtectedRoute>
@@ -56,6 +64,18 @@ function App() {
               <GalleryList />
             </ProtectedRoute>
           } />
+          <Route path="/admin/resources" element={
+            <ProtectedRoute>
+              <ResourceList />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/supporters" element={
+            <ProtectedRoute>
+              <SupportersView />
+            </ProtectedRoute>
+          } />
+          <Route path="/add-member" element={<ProtectedRoute><AddMember /></ProtectedRoute>} />
+          <Route path="/admin/members" element={<ProtectedRoute><AdminMemberList /></ProtectedRoute>} />
         </Routes>
 
         <Footer />

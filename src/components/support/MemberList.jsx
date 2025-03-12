@@ -1,36 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const MemberList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('name-asc');
+  const [members, setMembers] = useState([]);
 
-  const members = [
-    {
-      id: 1,
-      name: "Lorem Ipsum",
-      joinDate: "2023-01-15",
-    },
-    {
-      id: 2,
-      name: "Ipsum Lorem",
-      joinDate: "2023-02-20",
-    },
-    {
-      id: 3,
-      name: "Lorem Dolor",
-      joinDate: "2023-03-10",
-    },
-    {
-      id: 4,
-      name: "Lorem Sit Amet",
-      joinDate: "2023-04-05",
-    },
-    {
-      id: 5,
-      name: "Lorem Consectetur",
-      joinDate: "2023-05-12",
-    }
-  ];
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await axios.get('https://be-pustantarannepal.onrender.com/api/members');
+        setMembers(response.data);
+      } catch (error) {
+        console.error('Error fetching members:', error);
+      }
+    };
+    fetchMembers();
+  }, []);
 
   const sortMembers = (members) => {
     return [...members].sort((a, b) => {
@@ -84,7 +70,7 @@ const MemberList = () => {
       {/* Members Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {filteredMembers.map(member => (
-          <div key={member.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
+          <div key={member._id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4">
             <div className="mb-3">
               <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
             </div>

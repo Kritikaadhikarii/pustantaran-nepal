@@ -5,6 +5,7 @@ import ProductGrid from "./ProductGrid";
 import GalleryGrid from "./GalleryGrid";
 import PartnerCarousel from './PartnerCarousel';
 import qrCode from "../../assets/qr.png";
+import MemberStats from './MemberStats';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -186,6 +187,7 @@ const Hero = () => {
       </section>
 
       <PartnerCarousel />
+      <MemberStats />
       {/* Social Feed Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -216,6 +218,7 @@ const Hero = () => {
           {/* <SocialCarousel /> */}
         </div>
       </section>
+      
     </div>
   );
 };

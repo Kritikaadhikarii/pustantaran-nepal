@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Contributors from "./Contributors";
 import logo from "../../assets/logo.png";
 import qrCode from "../../assets/qr.png"; // Add this import
+import axios from "axios";
 
 const Funding = () => {
   const [showContributors, setShowContributors] = useState(false);
+  const [supporters, setSupporters] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const observer = useRef();
 
   const handleDownloadQR = () => {
     const link = document.createElement('a');
@@ -14,6 +20,67 @@ const Funding = () => {
     link.click();
     document.body.removeChild(link);
   };
+
+  const fetchSupporters = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`https://be-pustantarannepal.onrender.com/api/supporters?page=${page}&limit=8`);
+      setSupporters(prev => [...prev, ...response.data.supporters]);
+      setHasMore(response.data.hasMore);
+    } catch (error) {
+      console.error('Error fetching supporters:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const lastSupporterRef = useCallback(node => {
+    if (loading) return;
+    if (observer.current) observer.current.disconnect();
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMore) {
+        setPage(prev => prev + 1);
+      }
+    });
+    if (node) observer.current.observe(node);
+  }, [loading, hasMore]);
+
+  useEffect(() => {
+    fetchSupporters();
+  }, [page]);
+
+  const renderSupporters = () => (
+    <div className="overflow-hidden">
+      <div className="flex animate-scroll">
+        {/* First set of supporters */}
+        {supporters.map((supporter) => (
+          <div
+            key={`first-${supporter._id}`}
+            className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex-shrink-0 mx-4 flex items-center justify-center"
+          >
+            <img
+              src={`https://be-pustantarannepal.onrender.com/${supporter.logo}`}
+              alt={supporter.name}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        ))}
+        {/* Duplicate set for seamless scrolling */}
+        {supporters.map((supporter) => (
+          <div
+            key={`second-${supporter._id}`}
+            className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex-shrink-0 mx-4 flex items-center justify-center"
+          >
+            <img
+              src={`https://be-pustantarannepal.onrender.com/${supporter.logo}`}
+              alt={supporter.name}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <section className="bg-gradient-to-b from-white to-teal-50 py-20 px-6">
@@ -180,36 +247,7 @@ const Funding = () => {
                 Our Supporters
               </h2>
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="flex flex-wrap justify-center gap-12">
-                  <div className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-all duration-300">
-                    <img
-                      src={logo}
-                      alt="Pustantaran Nepal"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <div className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-all duration-300">
-                    <img
-                      src={logo}
-                      alt="Pustantaran Nepal"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <div className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-all duration-300">
-                    <img
-                      src={logo}
-                      alt="Pustantaran Nepal"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <div className="w-48 h-48 p-4 bg-gray-50 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-all duration-300">
-                    <img
-                      src={logo}
-                      alt="Pustantaran Nepal"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </div>
+                {renderSupporters()}
               </div>
             </div>
           </>

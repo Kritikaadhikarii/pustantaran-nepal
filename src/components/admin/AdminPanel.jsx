@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
-import { MdAddBox, MdPhotoLibrary, MdEdit, MdViewList } from 'react-icons/md';
+import { MdAddBox, MdPhotoLibrary, MdEdit, MdViewList, MdLibraryBooks, MdSupportAgent, MdGroup } from 'react-icons/md';
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const AdminPanel = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Products Management Card */}
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
@@ -64,6 +64,70 @@ const AdminPanel = () => {
             </Link>
           </div>
         </div>
+
+        {/* Resources Management Card */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+            <MdLibraryBooks className="text-teal-500" /> Resources Management
+          </h2>
+          <div className="space-y-3">
+            <Link
+              to="/add-resource"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdAddBox /> Add New Resource
+            </Link>
+            <Link
+              to="/admin/resources"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdEdit /> View/Edit Resources
+            </Link>
+          </div>
+        </div>
+
+        {/* Supporters Management Card */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+            <MdSupportAgent className="text-teal-500" /> Supporters Management
+          </h2>
+          <div className="space-y-3">
+            <Link
+              to="/add-supporter"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdAddBox /> Add New Supporter
+            </Link>
+            <Link
+              to="/admin/supporters"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdEdit /> View/Edit Supporters
+            </Link>
+          </div>
+        </div>
+
+        {/* Members Management Card */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
+            <MdGroup className="text-teal-500" /> Members Management
+          </h2>
+          <div className="space-y-3">
+            <Link
+              to="/admin/add-member"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdAddBox /> Add New Member
+            </Link>
+            <Link
+              to="/admin/members"
+              className="block w-full bg-teal-500 text-white text-center py-2 px-4 rounded hover:bg-teal-600 transition-colors flex items-center justify-center gap-2"
+            >
+              <MdEdit /> View/Edit Members
+            </Link>
+          </div>
+        </div>
+
       </div>
     </div>
   );
