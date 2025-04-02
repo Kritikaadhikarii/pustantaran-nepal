@@ -15,48 +15,50 @@ const ProfilePictureSVG = () => (
 const Team = () => {
   const [selectedAdvisor, setSelectedAdvisor] = useState(null);
 
-  const advisors = [
-    {
-      name: "Dr. Lorem Ipsum",
-      title: "Senior Medical Advisor",
-      expertise: "Geriatric Care Specialist",
-      qualification: "MD, Geriatric Medicine",
-      address: "Kathmandu, Nepal",
-      sector: "Healthcare",
-      description:
-        "Dr. Lorem Ipsum is a renowned geriatric care specialist with over 20 years of experience in elderly healthcare...",
-    },
-    {
-      name: "Prof. Ipsum Dolor",
-      title: "Strategic Advisor",
-      expertise: "Social Gerontologist",
-      qualification: "PhD, Social Work",
-      address: "Kathmandu, Nepal",
-      sector: "Social Work",
-      description:
-        "Prof. Ipsum Dolor is a social gerontologist with a focus on the social aspects of aging...",
-    },
-    {
-      name: "Mr. Dolor Sit",
-      title: "Legal Advisor",
-      expertise: "Elder Law Specialist",
-      qualification: "LLM, Human Rights Law",
-      address: "Kathmandu, Nepal",
-      sector: "Legal",
-      description:
-        "Mr. Dolor Sit is an elder law specialist with extensive experience in human rights law...",
-    },
-    {
-      name: "Mrs. Sit Amet",
-      title: "Wellness Advisor",
-      expertise: "Mental Health Professional",
-      qualification: "MA, Psychology",
-      address: "Kathmandu, Nepal",
-      sector: "Mental Health",
-      description:
-        "Mrs. Sit Amet is a mental health professional with a focus on the psychological well-being of the elderly...",
-    },
-  ];
+  // const advisors = [
+  //   {
+  //     name: "Dr. Lorem Ipsum",
+  //     title: "Senior Medical Advisor",
+  //     expertise: "Geriatric Care Specialist",
+  //     qualification: "MD, Geriatric Medicine",
+  //     address: "Kathmandu, Nepal",
+  //     sector: "Healthcare",
+  //     description:
+  //       "Dr. Lorem Ipsum is a renowned geriatric care specialist with over 20 years of experience in elderly healthcare...",
+  //   },
+  //   {
+  //     name: "Prof. Ipsum Dolor",
+  //     title: "Strategic Advisor",
+  //     expertise: "Social Gerontologist",
+  //     qualification: "PhD, Social Work",
+  //     address: "Kathmandu, Nepal",
+  //     sector: "Social Work",
+  //     description:
+  //       "Prof. Ipsum Dolor is a social gerontologist with a focus on the social aspects of aging...",
+  //   },
+  //   {
+  //     name: "Mr. Dolor Sit",
+  //     title: "Legal Advisor",
+  //     expertise: "Elder Law Specialist",
+  //     qualification: "LLM, Human Rights Law",
+  //     address: "Kathmandu, Nepal",
+  //     sector: "Legal",
+  //     description:
+  //       "Mr. Dolor Sit is an elder law specialist with extensive experience in human rights law...",
+  //   },
+  //   {
+  //     name: "Mrs. Sit Amet",
+  //     title: "Wellness Advisor",
+  //     expertise: "Mental Health Professional",
+  //     qualification: "MA, Psychology",
+  //     address: "Kathmandu, Nepal",
+  //     sector: "Mental Health",
+  //     description:
+  //       "Mrs. Sit Amet is a mental health professional with a focus on the psychological well-being of the elderly...",
+  //   },
+  // ];
+
+  const advisors = [];
 
   return (
     <section className="bg-gray-100 py-10 px-4 sm:px-6">
@@ -165,6 +167,7 @@ const Team = () => {
           organization. We are proud to have a diverse group of advisers and to
           have earned their trust in our efforts
         </p>
+        { advisors.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {advisors.map((advisor, index) => (
             <div
@@ -193,6 +196,9 @@ const Team = () => {
             </div>
           ))}
         </div>
+    ) : (
+      <div className="font-semibold text-2xl flex justify-center">Coming Soon ..</div>
+    )}
 
         {/* Advisor Modal */}
         {selectedAdvisor && (
