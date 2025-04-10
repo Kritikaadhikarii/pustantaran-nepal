@@ -556,7 +556,7 @@ const SupportUs = () => {
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
-        url="https://forms.gle/EX1Y1xfMBVDnrGus6"
+        url="https://docs.google.com/forms/d/e/1FAIpQLSebnMqKlXTzHw4v4crgrLUpGtbjweTOSZoG_zyQKQtIcdOisQ/viewform"
       />
     </section>
   );
