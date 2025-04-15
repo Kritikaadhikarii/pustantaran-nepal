@@ -142,6 +142,19 @@ const SupportUs = () => {
               </ul>
             </p>
           </div>
+          <div className="flex flex-col items-center text-center">
+            <h1 className="font-bold text-teal-700 -mb-4">Banking Details</h1>
+            <br />
+            <p>
+            Account Name: Pustantaran Nepal
+            <br />
+            Account Number: 023010010001845
+            <br />
+            Bank Name: Sanima Bank Limited
+            <br />
+            Swift Code: SNMANCKA
+            </p>
+          </div>
 
           <div className="border-t p-4 bg-white rounded-b-lg">
             <div className="flex justify-end gap-4">
