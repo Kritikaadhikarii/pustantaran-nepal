@@ -153,10 +153,7 @@ const MemberStats = () => {
                 <li>• Connecting us with potential funding sources</li>
                 <li>• Providing valuable technical expertise in senior care</li>
                 <li>• Making donations via QR code</li>
-                <li>
-                  • Utilizing our products and services
-
-                </li>
+                <li>• Utilizing our products and services</li>
               </ul>
             </p>
           </div>
@@ -165,13 +162,13 @@ const MemberStats = () => {
             <h1 className="font-bold text-teal-700 -mb-4">Banking Details</h1>
             <br />
             <p>
-            Account Name: Pustantaran Nepal
-            <br />
-            Account Number: 023010010001845
-            <br />
-            Bank Name: Sanima Bank Limited
-            <br />
-            Swift Code: SNMANCKA
+              Account Name: Pustantaran Nepal
+              <br />
+              Account Number: 023010010001845
+              <br />
+              Bank Name: Sanima Bank Limited
+              <br />
+              Swift Code: SNMANCKA
             </p>
           </div>
 
