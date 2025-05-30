@@ -9,7 +9,7 @@ import "swiper/css/effect-coverflow"
 const SocialCarousel = () => {
   const newsLinks = [
     {
-      url: "https://www.facebook.com/share/p/18xmrnDxAT/",
+      url: "https://www.facebook.com/profile.php?id=61573018822617",
       title: "Latest Updates on Facebook",
       category: "Social Media",
       date: "Recent",
@@ -27,7 +27,7 @@ const SocialCarousel = () => {
       date: "Sep 2023",
     },
     {
-      url: "https://nepalekhabar.com/2023/09/493932",
+      url: "https://nepalekhabar.com/2025/04/115854",
       title: "Over 50 Senior Citizens Benefit from Free Health Camp by Pustantaran Nepal",
       category: "Health Camp",
       date: "Sep 2023",
