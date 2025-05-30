@@ -3,9 +3,10 @@ import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 're
 import mainBg from "../../assets/main.jpg";
 import ProductGrid from "./ProductGrid";
 import GalleryGrid from "./GalleryGrid";
-import PartnerCarousel from './PartnerCarousel';
+import PartnerCarousel from './partner/PartnerCarousel';
 import qrCode from "../../assets/qr.png";
 import MemberStats from './MemberStats';
+import SocialCarousel from './SocialCarousel';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -215,7 +216,7 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          {/* <SocialCarousel /> */}
+          <SocialCarousel />
         </div>
       </section>
       

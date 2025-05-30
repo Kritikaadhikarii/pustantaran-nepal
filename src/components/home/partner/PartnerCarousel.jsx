@@ -1,8 +1,23 @@
-import logo from "../../assets/logo.png";
 import { useState, useEffect } from "react";
+import IncredibleLogo from "./IncredibleMountainLogo.jpg";
+import NaulinLogo from "./LogoofNaulinSportsVilla.jpg";
+import { FaGlobe, FaFacebookSquare } from "react-icons/fa"; // Import icons
 
 const PartnerCarousel = () => {
-  const partners = [logo, logo, logo, logo, logo, logo, logo, logo]; // Added more logos
+  const partners = [
+    { 
+      logo: IncredibleLogo, 
+      name: "Incredible Mountain", 
+      url: "https://www.incrediblemountains.com/",
+      icon: <FaGlobe className="text-blue-600" />
+    }, 
+    { 
+      logo: NaulinLogo, 
+      name: "Naulin Sports Villa", 
+      url: "https://www.facebook.com/naulinsportsvilla",
+      icon: <FaFacebookSquare className="text-blue-800" />
+    }
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(4);
 
@@ -59,13 +74,24 @@ const PartnerCarousel = () => {
             {visiblePartners.map((partner, idx) => (
               <div 
                 key={`${currentIndex}-${idx}`} 
-                className="flex-1 min-w-0 px-2"
+                className="flex-1 min-w-0 px-2 flex flex-col items-center"
               >
-                <img
-                  src={partner}
-                  alt={`Partner ${idx + 1}`}
-                  className="h-16 sm:h-20 w-auto mx-auto object-contain transition-all duration-300"
-                />
+                <a 
+                  href={partner.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-center hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-16 sm:h-20 w-auto mx-auto object-contain transition-all duration-300"
+                  />
+                  <div className="flex items-center justify-center mt-2 text-sm text-gray-700 gap-1">
+                    {partner.icon}
+                    <span>Visit</span>
+                  </div>
+                </a>
               </div>
             ))}
           </div>
